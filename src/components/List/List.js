@@ -3,7 +3,7 @@ import styles from './List.scss';
 import Hero from '../Hero/Hero.js';
 import Column from '../Column/Column.js';
 import Creator from '../Creator/Creator.js';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import {settings} from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 
@@ -11,10 +11,11 @@ class List extends React.Component {
   state = {
     columns: this.props.columns || [],
   }
-  static PropTypes = {
-    title: PropTypes.node.isRequired,
-    description: PropTypes.node,
-    columns: PropTypes.array.isRequired,
+  static propTypes = {
+    title: propTypes.node.isRequired,
+    description: propTypes.node,
+    image: propTypes.node,
+    columns: propTypes.array.isRequired,
   }
   static defaultProps = {
     description: settings.defaultListDescription,

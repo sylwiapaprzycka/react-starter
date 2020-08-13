@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Card.scss';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 class Card extends React.Component {
-  static PropTypes = {
-    title: PropTypes.node,
+  static propTypes = {
+    title: propTypes.node,
   }
   
   render() {

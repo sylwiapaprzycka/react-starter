@@ -4,16 +4,16 @@ import Card from '../Card/Card.js';
 import Icon from '../Icon/Icon.js';
 import Creator from '../Creator/Creator.js';
 import {settings} from '../../data/dataStore';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 class Column extends React.Component {
   state = {
     cards: this.props.cards || [],
   }
-  static PropTypes = {
-    title: PropTypes.string,
-    cards: PropTypes.array,
-    icon: PropTypes.node,
+  static propTypes = {
+    title: propTypes.string,
+    cards: propTypes.array,
+    icon: propTypes.node,
   }
 
   addCard(title) {
