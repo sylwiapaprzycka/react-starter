@@ -4,7 +4,7 @@ import Hero from '../Hero/Hero';
 import propTypes from 'prop-types';
 import { faqContents, listData } from '../../data/dataStore';
 
-const Info = () => (
+const FAQ = () => (
   <Container>
     <Hero titleText={ faqContents.title } image={ listData.image } />
     <h2>{ faqContents.questionOne }</h2>
@@ -16,9 +16,9 @@ const Info = () => (
   </Container>
 );
 
-Info.propTypes = {
+FAQ.propTypes = {
   title: propTypes.string,
   image: propTypes.string,
 };
 
-export default Info;
+export default FAQ;
