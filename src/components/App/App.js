@@ -4,8 +4,19 @@ import List from '../List/ListContainer.js';
 import Search from '../Search/SearchContainer.js';
 import propTypes from 'prop-types';
 import { DragDropContext } from 'react-beautiful-dnd';
+import { HamburgerSqueeze } from 'react-animated-burgers';
 
 class App extends React.Component {
+  state = {
+    isActive: false,
+  }
+
+  toggleButton = () => {
+    this.setState({
+      isActive: !this.state.isActive,
+    });
+  }
+
   static propTypes = {
     title: propTypes.node,
     subtitle: propTypes.node,
@@ -40,9 +51,10 @@ class App extends React.Component {
     };
     return (
       <main className={ styles.component }>
+        <HamburgerSqueeze isActive={this.state.isActive} toggleButton={this.toggleButton} barColor='white' />
         <h1 className={ styles.title }>{ title }</h1>
         <h2 className={ styles.subtitle }>{ subtitle }</h2>
-        <Search />
+        <Search /> 
         <DragDropContext onDragEnd={moveCardHandler}>
           {lists.map(listData => (
             <List key={listData.id} {...listData} />
