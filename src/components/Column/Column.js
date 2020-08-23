@@ -21,6 +21,7 @@ class Column extends React.Component {
   }
   render() {
     const { title, icon, cards, addCard, id } = this.props;
+    cards.sort((a, b) => a.index - b.index);
 
     return (
       <section className={ styles.component }>
@@ -29,7 +30,7 @@ class Column extends React.Component {
           { title }
         </h3>
         <div>
-          <Droppable droppableId={id}>
+          <Droppable droppableId={ id }>
             {provided => (
               <div
                 className={styles.cards}
@@ -37,16 +38,16 @@ class Column extends React.Component {
                 ref={provided.innerRef}
               >
                 {cards.map(cardData => (
-                  <Card key={cardData.id} {...cardData} />
+                  <Card key={ cardData.id } { ...cardData } />
                 ))}
 
-                {provided.placeholder}
+                { provided.placeholder }
               </div>
             )}
           </Droppable>
         </div>
-        <div className={styles.creator}>
-          <Creator text={settings.cardCreatorText} action={addCard}/>
+        <div className={ styles.creator }>
+          <Creator text={ settings.cardCreatorText } action={ addCard } />
         </div>
       </section>
     );

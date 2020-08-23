@@ -13,15 +13,15 @@ class Card extends React.Component {
   render() {
     const { title, id, index } = this.props;
     return (
-      <Draggable draggableId={id} index={index}>
+      <Draggable draggableId={ id } index={ index }>
         {(provided) => (
           <article
-            className={styles.component}
-            {...provided.draggableProps}
-            {...provided.dragHandleProps}
-            ref={provided.innerRef}
+            className={ styles.component }
+            { ...provided.draggableProps }
+            { ...provided.dragHandleProps } 
+            ref={ provided.innerRef }
           >
-            {title}
+            <h3 className={ styles.title }>{ title }</h3>
           </article>
         )}
       </Draggable>

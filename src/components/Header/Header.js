@@ -3,7 +3,8 @@ import { NavLink, Link } from 'react-router-dom';
 import styles from './Header.scss';
 import Container from '../Container/Container';
 import Icon from '../Icon/Icon';
-import { HamburgerSqueeze } from 'react-animated-burgers';
+import Search from '../Search/SearchContainer';
+// import { HamburgerSqueeze } from 'react-animated-burgers';
 
 class Header extends React.Component {
   state = {
@@ -22,13 +23,15 @@ class Header extends React.Component {
         <Container>
           <div className={ styles.wrapper }>
             <Link to='/' className={ styles.logo }>
-              <Icon name='moon' />
+              <Icon exact to ='/' name='moon' />
             </Link>
             <nav>
-              <NavLink exact to='/'>Home</NavLink>
-              <NavLink exact to='/info'>Info</NavLink>
-              <HamburgerSqueeze isActive={this.state.isActive} toggleButton={this.toggleButton} barColor='white' buttonWidth={20} />
+              <NavLink exact to='/' activeClassName='active'>Home</NavLink>
+              <NavLink exact to='/info' activeClassName='active'>Info</NavLink>
+              <NavLink exact to='/faq' activeClassName='active'>FAQ</NavLink>
+              {/* <HamburgerSqueeze isActive={ this.state.isActive } toggleButton={ this.toggleButton } barColor='white' buttonWidth={ 20 } /> */}
             </nav>
+            <Search />
           </div>
         </Container>
       </header>
