@@ -4,24 +4,41 @@ import Card from '../Card/Card.js';
 import propTypes from 'prop-types';
 import Container from '../Container/Container';
 import { Link } from 'react-router-dom';
+import { Droppable } from 'react-beautiful-dnd';
 
 class SearchResults extends React.Component {
   static propTypes = {
+    match: propTypes.any,
+    index: propTypes.number,
     cards: propTypes.array,
+    id: propTypes.string,
   }
 
+
   render() {
-    const { cards } = this.props;
+    const { cards, id } = this.props;
 
     return (
       <Container>
         <section className={ styles.component }>
-          {cards.map(cardData => (
-            <div key={ cardData.id }> 
-              <Card key={ cardData.id } { ...cardData } />
-              <Link to={ `/list/${ cardData.listId }` } />
-            </div>
-          ))}
+          <Droppable droppableId={ id } >
+            { provided => (
+              <div
+                className={ styles.cards }
+                { ...provided.droppableProps }
+                ref={ provided.innerRef }
+              >
+                {cards.map((cardData, index) => (
+                  <>
+                    <Link to={ `/list/${ cardData.listId }` }>
+                      <Card key={ cardData.id } { ...cardData } index={ index } />
+                    </Link>
+                  </>
+                ))}
+                { provided.placeholder }
+              </div>
+            )}
+          </Droppable>
         </section>
       </Container>
     );

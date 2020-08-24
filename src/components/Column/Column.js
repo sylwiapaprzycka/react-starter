@@ -14,6 +14,7 @@ class Column extends React.Component {
     icon: propTypes.node,
     addCard: propTypes.func,
     id: propTypes.string,
+    index: propTypes.number,
   }
 
   static defaultProps = {
@@ -37,8 +38,8 @@ class Column extends React.Component {
                 {...provided.droppableProps}
                 ref={provided.innerRef}
               >
-                {cards.map(cardData => (
-                  <Card key={ cardData.id } { ...cardData } />
+                {cards.map((cardData, index) => (
+                  <Card key={ cardData.id } { ...cardData } index={ index} />
                 ))}
 
                 { provided.placeholder }

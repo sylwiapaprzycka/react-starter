@@ -13,8 +13,8 @@ class Card extends React.Component {
   render() {
     const { title, id, index } = this.props;
     return (
-      <Draggable draggableId={ id } index={ index }>
-        {(provided) => (
+      <Draggable draggableId={ id } index={ index } >
+        {provided => (
           <article
             className={ styles.component }
             { ...provided.draggableProps }
@@ -24,7 +24,7 @@ class Card extends React.Component {
             <h3 className={ styles.title }>{ title }</h3>
           </article>
         )}
-      </Draggable>
+      </Draggable> 
     );
   }
 }
