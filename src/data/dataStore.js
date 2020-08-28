@@ -9,6 +9,7 @@ export const settings = {
   search: {
     defaultText: 'Search...',
     icon: 'search',
+    resultTitle: 'Search results:',
   },
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
@@ -103,7 +104,7 @@ const lists = [
   {
     id: 'list-3',
     title: 'Things to forget <sup>soon!</sup>',
-    description: 'Move on and never look',
+    description: 'Move on and never look back!',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   },
 ];

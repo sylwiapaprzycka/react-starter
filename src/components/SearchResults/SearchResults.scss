@@ -25,6 +25,22 @@
   padding: ($base-size / 2) 0;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: 700;
+  color: $color-nav;
+}
+
+.icon {
+  margin: 0 10px;
+  color: $color-success;
+}
+
 @media (max-width: 767px) {
 
   .component {
