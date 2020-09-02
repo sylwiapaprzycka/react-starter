@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Column.scss';
-import Card from '../Card/Card.js';
+import DraggableCard from '../Card/DraggableCard.js';
 import Icon from '../Icon/Icon.js';
 import Creator from '../Creator/Creator.js';
 import { settings } from '../../data/dataStore';
@@ -39,7 +39,7 @@ class Column extends React.Component {
                 ref={provided.innerRef}
               >
                 {cards.map((cardData, index) => (
-                  <Card key={ cardData.id } { ...cardData } index={ index} />
+                  <DraggableCard key={ cardData.id } { ...cardData } index={ index} />
                 ))}
 
                 { provided.placeholder }

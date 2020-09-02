@@ -11,7 +11,7 @@ import { DragDropContext } from 'react-beautiful-dnd';
 
 class List extends React.Component {
   static propTypes = {
-    title: propTypes.node.isRequired,
+    title: propTypes.node,
     description: propTypes.node,
     image: propTypes.node,
     columns: propTypes.array.isRequired,
