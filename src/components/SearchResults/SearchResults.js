@@ -46,7 +46,7 @@ class SearchResults extends React.Component {
                   {cards.map((cardData, index) => (
                     <div key={ cardData.id } className={ styles.wrapper }>
                       <Card key={ cardData.id } { ...cardData } index={ index } />
-                      <Link className={styles.link} to={`/list/${ cardData.columnId}`}>
+                      <Link className={styles.link} to={`/list/${ cardData.listId}`}>
                         <p>Check out the list</p>
                       </Link>
                     </div>
